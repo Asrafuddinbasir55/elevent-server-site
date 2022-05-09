@@ -74,7 +74,7 @@ const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology:
       res.send(result)
     })
 
-    Delete
+    // Delete
     app.delete('/product/:id', async(req, res)=>{
       const id = req.params.id;
       console.log(id)
