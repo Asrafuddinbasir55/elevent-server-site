@@ -33,7 +33,7 @@ const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology:
    const query = {};
     const cursor = productCollection2.find(query);
     const product2 = await cursor.toArray();
-    res.send()
+    res.send(product2)
 
     })
 
@@ -74,13 +74,13 @@ const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology:
       res.send(result)
     })
 
-    // Delete
-    // app.delete('/product/:id', async(req, res)=>{
-    //   const id = req.params.id;
-    //   console.log(id)
-    //   const result = await productCollection.deleteOne({ _id: ObjectId(id) });
-    //   res.send(result);
-    // })
+    Delete
+    app.delete('/product/:id', async(req, res)=>{
+      const id = req.params.id;
+      console.log(id)
+      const result = await productCollection.deleteOne({ _id: ObjectId(id) });
+      res.send();
+    })
 
   } finally {
     
