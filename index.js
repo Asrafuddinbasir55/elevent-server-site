@@ -53,13 +53,13 @@ const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology:
     const options = { upsert: true };
     const updatedDoc = {
         $set: {
-          SupplierName : update.SupplierName,
-          description:update.description,
-          quantity : update.quantity,
-          price : update.price,
-          picture : update.picture,
-          Brand : update.Brand
-        }
+        //   SupplierName : update.SupplierName,
+        //   description:update.description,
+        //   quantity : update.quantity,
+        //   price : update.price,
+        //   picture : update.picture,
+        //   Brand : update.Brand
+        // }
     };
     const result = await productCollection.updateOne(filter, updatedDoc, options);
     res.send(result);
@@ -79,7 +79,7 @@ const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology:
       const id = req.params.id;
       console.log(id)
       const result = await productCollection.deleteOne({ _id: ObjectId(id) });
-      res.send();
+      res.send(result);
     })
 
   } finally {
