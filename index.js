@@ -62,7 +62,7 @@ const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology:
         }
     };
     const result = await productCollection.updateOne(filter, updatedDoc, options);
-    res.send(result);
+    
 
  })
   
