@@ -17,7 +17,7 @@ const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology:
  async function run() {
   try {
     await client.connect();
-    console.log('db connect');
+    
     const productCollection = client.db('smartphone').collection('product');
      const productCollection2 = client.db('smartphone').collection('product2');
     
@@ -62,7 +62,7 @@ const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology:
         }
     };
     const result = await productCollection.updateOne(filter, updatedDoc, options);
-    
+    res.send(result);
 
  })
   
@@ -90,7 +90,7 @@ const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology:
 
 
 app.get('/', (req, res) => {
-  res.send('Server code Running!')
+  res.send('Hello World!')
 })
 
 app.listen(port, () => {
